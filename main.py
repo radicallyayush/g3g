@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -9,6 +9,10 @@ def hellog3g():
 @app.route('/open')
 def openg3g():
     return 'building in progress'
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 if __name__ == '__main__':
    app.run()
